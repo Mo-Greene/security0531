@@ -44,13 +44,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     // [로그인 기능]
                     .formLogin()
                     // 로그인 View 제공 (GET /user/login)
-                    .loginPage("/user/login")
+                    .loginPage("/user/loginView")
                     // 로그인 처리 (POST /user/login) 로그인 어센티케이션 매니저/username, password를 가팅 보내야됨
                     .loginProcessingUrl("/user/login")
                     // 로그인 처리 후 성공 시 URL
                     .defaultSuccessUrl("/")
                     // 로그인 처리 후 실패 시 URL
-                    .failureUrl("/user/login?error")
+                    .failureUrl("/user/loginView?error")
                     .permitAll()
                 .and()
                     // [로그아웃 기능]
