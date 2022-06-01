@@ -62,8 +62,8 @@ public class UserController {
             model.addAttribute("html_password2", "비밀번호와 똑같이 적어주숑");
             return "signup";
         }
-
         userService.postUser(requestDto);
         return "redirect:/user/loginView";
     }
+
 }
