@@ -13,7 +13,10 @@ public class HomeController {
     @GetMapping("/loginView")
     // 밑에 내용은 왜워야됨 혹은 복붙 하자  이거 토큰을 만들어준거군요? 로그인 후 디테일 impl을 건네준거 토큰씌어서 구웃
     public String home(Model model, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        model.addAttribute("username", userDetails.getUsername());
+        // if문을 넣으니 들어가짐 토큰도 받아옴 구웃
+        if (userDetails != null) {
+            model.addAttribute("username", userDetails.getUsername());
+        }
         // 동적 index 파일로 간다~
         return "index";
     }
